@@ -1,0 +1,71 @@
+<div class="container">
+    <br><br>
+    <div id="head">
+        <img id="noodlesIcon" src="assets/images/noodles.png"></img>
+        <br><br>
+        <h1>Eat-Da-Noodles!</h1>
+    </div>
+    <br>
+    <div class="clearfix" id="foodDiv">
+        <div id="uneaten" class="float-left">
+            <h4 class="title">Ready to Eat:</h4>
+            <br>
+            <ol>
+                {{!--loop through the array under the pasta key in the object that was given to handlebars--}}
+                {{#each pasta}}
+                    {{!--if devoured is FALSE--}}
+                    {{#unless devoured}}
+                        {{!--make a new ordered list element displaying the pasta_name value and give it a data attribute of the pasta's database id--}}
+                        <h4><li>{{pasta_name}} <span><button data-pastaid="{{id}}" class="devourMe"><i class="fa fa-cutlery" aria-hidden="true"></i> Devour!</button></span></li></h4>
+                    {{/unless}}
+                {{/each}}
+            </ol>
+        </div>
+        <div id="eaten" class="float-right">
+            <h4 class="title">Finished Off:</h4>
+            <br>
+            <ol>
+                {{!--loop through the array under the pasta key in the object that was given to handlebars--}}
+                {{#each pasta}}
+                    {{!--if devoured is TRUE--}}
+                    {{#if devoured}}
+                        {{!--make a new ordered list element displaying the pasta_name value--}}
+                        <h4><li>{{pasta_name}}</li></h4>
+                    {{/if}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+    <br>
+    <div>
+        <form class="input-group" action="/" method="POST">
+          <input type="text" class="form-control" name="newNoodle">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="submit" id="submit">Serve It Up!</button>
+          </span>
+        </form>
+    </div>
+    <br>
+    <div>
+        <p id="instructions">Enter a pasta dish you want to eat and serve it up!</p>
+    </div>
+</div>
+<script>
+    //When a button in the devourMe class is clicked
+    $(".devourMe").on("click", function(){
+        //set id variable equal to the pastaID data attribute (the id from the pastaDishes table)
+        var id = $(this).data("pastaid");
+        //PUT request to the path "/id"
+        $.ajax("/" + id, {
+        type: "PUT"
+        }).then(
+            function() {
+            // Once the selected item has been successfully devoured, reload the page to get the updated list
+            location.reload();
+        })
+    });
+    
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    

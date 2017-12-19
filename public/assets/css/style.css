@@ -1,0 +1,46 @@
+body{
+    background-color:purple;
+    font-family: 'Comfortaa', cursive;
+    color: black;
+}
+
+#head{
+    max-width:350px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    text-decoration: underline;
+}
+
+#noodlesIcon{
+    max-height:250px;
+    padding-left:80px;
+}
+
+#instructions{
+    font-size: 18px;
+    text-align:center;
+}
+
+.input-group{
+    max-width: 600px;
+    margin: auto;
+}
+
+button{
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#foodDiv{
+    max-width: 75%;
+    margin: auto;
+}
+
+#uneaten,
+#eaten{
+    max-width: 50%;
+}
