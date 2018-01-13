@@ -9,4 +9,4 @@ User's can enter in dishes they want served up and then, when ready, they can de
 
 Technologies Used:
 
-Node.js | Express.js | MySQL | Sequelize | Handlebars.js | JavaScript | jQuery
+Node.js | Express.js | MySQL | Sequelize | Handlebars.js | JavaScript | jQuery | Heroku
