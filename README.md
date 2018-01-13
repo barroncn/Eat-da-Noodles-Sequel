@@ -1,6 +1,6 @@
 Eat-tha-Pasta (the Sequel!)
 
-Check it out here!](https://protected-woodland-96587.herokuapp.com/)
+[Check it out here!](https://protected-woodland-96587.herokuapp.com/)
 
 Does this app look familiar? Well it should! Its the same app as Eat-tha-Pasta, but it has been transitioned to use Sequelize. What a life saver!
 
@@ -9,4 +9,4 @@ User's can enter in dishes they want served up and then, when ready, they can de
 
 Technologies Used:
 
-Node.js | MySQL | Sequelize | JavaScript | jQuery
+Node.js | Express.js | MySQL | Sequelize | Handlebars | JavaScript | jQuery
