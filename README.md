@@ -1,4 +1,4 @@
-Eat-tha-Pasta (the Sequel!)
+# Eat-da-Noodles (the Sequel!)
 
 [Check it out here!](https://protected-woodland-96587.herokuapp.com/)
 
